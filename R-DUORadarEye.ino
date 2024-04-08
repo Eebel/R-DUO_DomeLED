@@ -96,7 +96,7 @@ void PatternHandler(NeoPatterns *aLedsPtr) {
         aLedsPtr->Delay(1500);
         break;
     case 2:
-        aLedsPtr->Heartbeat(COLOR32_GREEN, 80, 0);
+        aLedsPtr->Fade(COLOR32_RED, COLOR32_BLUE, 6, 1000);
         break;
     case 3:
         aLedsPtr->Delay(1500);
@@ -105,26 +105,27 @@ void PatternHandler(NeoPatterns *aLedsPtr) {
         aLedsPtr->RainbowCycle(10, DIRECTION_UP);
         break;
     case 5:
-        aLedsPtr->RainbowCycle(10, DIRECTION_DOWN);
+        aLedsPtr->ColorWipe(COLOR32_RED,10, FLAG_DO_NOT_CLEAR,DIRECTION_DOWN);
         break;
     case 6:
-        aLedsPtr->Heartbeat(COLOR32_BLUE, 80, 6, 0);
+        aLedsPtr->Fade(COLOR32_BLUE, COLOR32_BLUE, 20, 500);
         break;
     case 7:
-        aLedsPtr->Heartbeat(COLOR32_RED, 80, 5, 0);
+        aLedsPtr->ColorWipe(COLOR32_RED, 80, FLAG_DO_NOT_CLEAR, 1);
         break;
     case 8:
-        aLedsPtr->Heartbeat(COLOR32_ORANGE, 80, 4, 1);
+        aLedsPtr->Heartbeat(COLOR32_ORANGE, 20, 4, 1);
         break;
     case 9:
         //aLedsPtr->Fire(20, 260); // OK Fire(30, 260)is also OK
         //sState = -1; // Start from beginning
-        ring1.ColorWipe(COLOR32_PURPLE, 80);
+        ring1.ColorWipe(COLOR32_PURPLE,10,1,1);
+        //aLedsPtr->Delay(3000);
         break;
     case 10:
         // switch to random
         //initMultipleFallingStars(aLedsPtr, COLOR32_WHITE_HALF, 7, 30, 3, &allPatternsRandomHandler);
-        ring1.ColorWipe(COLOR32_RED, 50);
+        ring1.Fade(COLOR32_RED_HALF, COLOR32_RED,10,500);
         sState = -1; // Start from beginning
         break;
     default:
