@@ -3,6 +3,8 @@
 
 // Which pin on the Arduino is connected to the NeoPixels?
 
+//Uses NEOPATTERNS 3.1.1 or later
+
 void PatternHandler(NeoPatterns *aLedsPtr);
 
 #define PIN_RADAREYE   6
